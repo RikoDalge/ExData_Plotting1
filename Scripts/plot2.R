@@ -1,6 +1,15 @@
-source("./get_clean_data.R")
+#Plot 2
 
-days <- get_data()
+#Check to see if the data is already in.
+if (!exists("days", inherits = FALSE)){  
+        source("./get_clean_data.R")
+        days <- get_data()
+}
+
+#Check if the plots directory exists
+if(!file.exists("plots")){
+        dir.create("plots")
+}
 
 png(filename='./plots/plot2.png',width=480,height=480,units='px')
 
